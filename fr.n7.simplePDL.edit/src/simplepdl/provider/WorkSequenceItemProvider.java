@@ -138,14 +138,11 @@ public class WorkSequenceItemProvider extends ProcessElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		WorkSequence ws = (WorkSequence) object;
-		WorkSequenceType labelValue = ws.getLinkType();
-		String label = "--" + (labelValue == null ? "?" : labelValue.toString()) + "-->";
-		String previous = ws.getPredecessor() == null ? "?" : ws.getPredecessor().getName();
-		String next = ws.getSuccessor() == null ? "?" : ws.getSuccessor().getName();
+		WorkSequenceType labelValue = ((WorkSequence)object).getLinkType();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-		getString("_UI_WorkSequence_type") :
-		getString("_UI_WorkSequence_type") + " " + previous + " " + label + " " + next;
+			getString("_UI_WorkSequence_type") :
+			getString("_UI_WorkSequence_type") + " " + label;
 	}
 
 
@@ -161,8 +158,6 @@ public class WorkSequenceItemProvider extends ProcessElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(WorkSequence.class)) {
-			case SimplepdlPackage.WORK_SEQUENCE__PREDECESSOR:
-			case SimplepdlPackage.WORK_SEQUENCE__SUCCESSOR:
 			case SimplepdlPackage.WORK_SEQUENCE__LINK_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
