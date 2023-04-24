@@ -1,0 +1,24 @@
+process p {
+	r concepteur 3
+	r developpeur 2
+	r machine 4
+	r redacteur 1
+	r testeur 2
+	ru concepteurPourConception 2 concepteur
+	ru machinePourConception 2 machine
+	ru machinePourRedactionDoc 1 machine
+	ru redacteurPourRedactionDoc 1 redacteur
+	ru developpeurPourProgrammation 2 developpeur
+	ru machinePourProgrammation 3 machine
+	ru machinePourRedactionTests 2 machine
+	ru testeurPourRedactionTests 1 testeur
+	wd conception use concepteurPourConception machinePourConception
+	wd redactionDoc use redacteurPourRedactionDoc machinePourRedactionDoc
+	wd programmation use developpeurPourProgrammation machinePourProgrammation
+	wd redactionTests use testeurPourRedactionTests machinePourRedactionTests
+	ws f2f from conception to redactionDoc
+	ws s2s from conception to redactionDoc
+	ws f2s from conception to programmation
+	ws s2s from conception to redactionTests
+	ws f2f from programmation to redactionTests
+}
