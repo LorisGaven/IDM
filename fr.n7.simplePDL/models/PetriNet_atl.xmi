@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:petrinet="http://petrinet">
+  <petrinet:PetriNet name="P"/>
+  <petrinet:Place name="Conception_ready" outgoing="/7" nbToken="1"/>
+  <petrinet:Place name="Conception_started" outgoing="/46 /48" ingoing="/9"/>
+  <petrinet:Place name="Conception_running" outgoing="/10" ingoing="/8"/>
+  <petrinet:Place name="Conception_finished" outgoing="/45 /47" ingoing="/11"/>
+  <petrinet:Transition name="Conception_start" outgoing="/8 /9" ingoing="/7 /55 /57"/>
+  <petrinet:Transition name="Conception_finish" outgoing="/11 /56 /58" ingoing="/10"/>
+  <petrinet:Arc weight="1" source="/1" target="/5"/>
+  <petrinet:Arc weight="1" source="/5" target="/3"/>
+  <petrinet:Arc weight="1" source="/5" target="/2"/>
+  <petrinet:Arc weight="1" source="/3" target="/6"/>
+  <petrinet:Arc weight="1" source="/6" target="/4"/>
+  <petrinet:Place name="RedactionDoc_ready" outgoing="/18" nbToken="1"/>
+  <petrinet:Place name="RedactionDoc_started" ingoing="/20"/>
+  <petrinet:Place name="RedactionDoc_running" outgoing="/21" ingoing="/19"/>
+  <petrinet:Place name="RedactionDoc_finished" ingoing="/22"/>
+  <petrinet:Transition name="RedactionDoc_start" outgoing="/19 /20" ingoing="/18 /46 /59 /61"/>
+  <petrinet:Transition name="RedactionDoc_finish" outgoing="/22 /60 /62" ingoing="/21 /45"/>
+  <petrinet:Arc weight="1" source="/12" target="/16"/>
+  <petrinet:Arc weight="1" source="/16" target="/14"/>
+  <petrinet:Arc weight="1" source="/16" target="/13"/>
+  <petrinet:Arc weight="1" source="/14" target="/17"/>
+  <petrinet:Arc weight="1" source="/17" target="/15"/>
+  <petrinet:Place name="Programmation_ready" outgoing="/29" nbToken="1"/>
+  <petrinet:Place name="Programmation_started" ingoing="/31"/>
+  <petrinet:Place name="Programmation_running" outgoing="/32" ingoing="/30"/>
+  <petrinet:Place name="Programmation_finished" outgoing="/49" ingoing="/33"/>
+  <petrinet:Transition name="Programmation_start" outgoing="/30 /31" ingoing="/29 /47 /63 /65"/>
+  <petrinet:Transition name="Programmation_finish" outgoing="/33 /64 /66" ingoing="/32"/>
+  <petrinet:Arc weight="1" source="/23" target="/27"/>
+  <petrinet:Arc weight="1" source="/27" target="/25"/>
+  <petrinet:Arc weight="1" source="/27" target="/24"/>
+  <petrinet:Arc weight="1" source="/25" target="/28"/>
+  <petrinet:Arc weight="1" source="/28" target="/26"/>
+  <petrinet:Place name="RedactionTests_ready" outgoing="/40" nbToken="1"/>
+  <petrinet:Place name="RedactionTests_started" ingoing="/42"/>
+  <petrinet:Place name="RedactionTests_running" outgoing="/43" ingoing="/41"/>
+  <petrinet:Place name="RedactionTests_finished" ingoing="/44"/>
+  <petrinet:Transition name="RedactionTests_start" outgoing="/41 /42" ingoing="/40 /48 /67 /69"/>
+  <petrinet:Transition name="RedactionTests_finish" outgoing="/44 /68 /70" ingoing="/43 /49"/>
+  <petrinet:Arc weight="1" source="/34" target="/38"/>
+  <petrinet:Arc weight="1" source="/38" target="/36"/>
+  <petrinet:Arc weight="1" source="/38" target="/35"/>
+  <petrinet:Arc weight="1" source="/36" target="/39"/>
+  <petrinet:Arc weight="1" source="/39" target="/37"/>
+  <petrinet:Arc weight="1" source="/4" target="/17" kind="read"/>
+  <petrinet:Arc weight="1" source="/2" target="/16" kind="read"/>
+  <petrinet:Arc weight="1" source="/4" target="/27" kind="read"/>
+  <petrinet:Arc weight="1" source="/2" target="/38" kind="read"/>
+  <petrinet:Arc weight="1" source="/26" target="/39" kind="read"/>
+  <petrinet:Place name="concepteur" outgoing="/55" ingoing="/56" nbToken="3"/>
+  <petrinet:Place name="developpeur" outgoing="/63" ingoing="/64" nbToken="2"/>
+  <petrinet:Place name="machine" outgoing="/57 /59 /65 /67" ingoing="/58 /60 /66 /68" nbToken="4"/>
+  <petrinet:Place name="redacteur" outgoing="/61" ingoing="/62" nbToken="1"/>
+  <petrinet:Place name="testeur" outgoing="/69" ingoing="/70" nbToken="2"/>
+  <petrinet:Arc weight="2" source="/50" target="/5"/>
+  <petrinet:Arc weight="2" source="/6" target="/50"/>
+  <petrinet:Arc weight="2" source="/52" target="/5"/>
+  <petrinet:Arc weight="2" source="/6" target="/52"/>
+  <petrinet:Arc weight="1" source="/52" target="/16"/>
+  <petrinet:Arc weight="1" source="/17" target="/52"/>
+  <petrinet:Arc weight="1" source="/53" target="/16"/>
+  <petrinet:Arc weight="1" source="/17" target="/53"/>
+  <petrinet:Arc weight="2" source="/51" target="/27"/>
+  <petrinet:Arc weight="2" source="/28" target="/51"/>
+  <petrinet:Arc weight="3" source="/52" target="/27"/>
+  <petrinet:Arc weight="3" source="/28" target="/52"/>
+  <petrinet:Arc weight="2" source="/52" target="/38"/>
+  <petrinet:Arc weight="2" source="/39" target="/52"/>
+  <petrinet:Arc weight="1" source="/54" target="/38"/>
+  <petrinet:Arc weight="1" source="/39" target="/54"/>
+</xmi:XMI>
